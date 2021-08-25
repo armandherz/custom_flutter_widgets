@@ -1,4 +1,11 @@
-import 'package:custom_flutter_widgets/widgets/DownButton.dart';
+// ignore: unused_import
+import 'package:custom_flutter_widgets/widgets/count_down.dart';
+// ignore: unused_import
+import 'package:custom_flutter_widgets/widgets/input_fields/inputfield_vertical_line.dart';
+import 'package:custom_flutter_widgets/widgets/my_calendar.dart';
+import 'package:custom_flutter_widgets/widgets/my_switch_button.dart';
+// ignore: unused_import
+import 'package:custom_flutter_widgets/widgets/typing_letters_efect.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -9,81 +16,22 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    Size screen = MediaQuery.of(context).size;
-    return Container(
-      width: screen.width,
-      height: screen.height,
-      color: Color.lerp(Colors.black, Colors.white, 0.2),
-      child: SafeArea(
-          child: Column(
-        children: [
-          DownButton(
-            width: 100.0,
-            height: 100.0,
-            elevation: 10.0,
-            color: Colors.amber,
-            borderRadius: BorderRadius.circular(10.0),
-            onPressed: () {
-              print("onPressed");
-            },
-            onLongPressed: () {
-              print("onLongPressed");
-            },
-            child: Icon(Icons.add_circle),
-          ),
-          DownButton(
-            width: 300.0,
-            height: 100.0,
-            elevation: 10.0,
-            color: Colors.greenAccent,
-            borderRadius: BorderRadius.circular(10.0),
-            onPressed: () {
-              print("onPressed");
-            },
-            onLongPressed: () {
-              print("onLongPressed");
-            },
-            child: Center(
-              child: Text(
-                "Button",
-                style: Theme.of(context).textTheme.headline3,
-              ),
+    return Scaffold(
+      backgroundColor: Colors.grey,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Center(
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 200.0,
+                ),
+                MySwitchButton(),
+              ],
             ),
           ),
-          DownButton(
-            width: 40.0,
-            height: 40.0,
-            elevation: 5.0,
-            color: Colors.amber,
-            borderRadius: BorderRadius.circular(10.0),
-            onPressed: () {
-              print("onPressed");
-            },
-            onLongPressed: () {
-              print("onLongPressed");
-            },
-            child: Icon(Icons.add_circle),
-          ),
-          DownButton(
-            elevation: 5.0,
-            color: Colors.amber,
-            borderRadius: BorderRadius.circular(10.0),
-            onPressed: () {
-              print("onPressed");
-            },
-            onLongPressed: () {
-              print("onLongPressed");
-            },
-            disabled: true,
-            child: Center(
-              child: Text(
-                "Example button",
-                style: Theme.of(context).textTheme.headline3,
-              ),
-            ),
-          ),
-        ],
-      )),
+        ),
+      ),
     );
   }
 }

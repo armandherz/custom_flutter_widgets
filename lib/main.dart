@@ -1,4 +1,4 @@
-import 'package:custom_flutter_widgets/pages/Home.dart';
+import 'package:custom_flutter_widgets/pages/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {
